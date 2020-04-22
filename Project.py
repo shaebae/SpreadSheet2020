@@ -24,7 +24,3 @@ def run():
 
 
 run()
-
-print("Test")
-
-print('Test2? ')
