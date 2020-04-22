@@ -22,5 +22,7 @@ def run():
     print('Monthly Sales: {}'.format(sales))
     print('Total sales: {}'.format(total))
 
+
 run()
 
+print("Test")
