@@ -23,10 +23,3 @@ def run():
     print('Total sales: {}'.format(total))
 
 
-run()
-
-print("Test")
-
-print('Test2? ')
-
-print("Hello")
