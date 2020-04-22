@@ -23,3 +23,5 @@ def run():
     print('Total sales: {}'.format(total))
 
 
+run ()
+print("check")
