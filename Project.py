@@ -22,6 +22,7 @@ def run():
     length = len(sales)
     average = sum(sales)/len(sales)
 
+
     print('Monthly Sales: {}'.format(sales))
     print('Total sales: {}'.format(total))
     print('Length list:{}'.format(length))
@@ -34,6 +35,6 @@ def run():
 
 run ()
 
-print("check")
+
 
 
