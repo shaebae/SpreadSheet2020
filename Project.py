@@ -1,4 +1,8 @@
 import csv
+import xlsxwriter
+
+workbook = xlsxwriter.Workbook('data.xlsx')
+worksheet = workbook.add_worksheet()
 
 def read_data():
     data=[]
@@ -35,6 +39,12 @@ def run():
 
 run ()
 
+worksheet.write('A1', 'Total Sales')
+worksheet.write('B1', 'Average Sales')
+worksheet.write('C1', 'Minimum Sales')
+worksheet.write('D1', 'Max Sales')
+#and add the results in other rows
 
+workbook.close()
 
 
