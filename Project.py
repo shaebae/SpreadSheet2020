@@ -39,10 +39,19 @@ def run():
 
 run ()
 
-worksheet.write('A1', 'Total Sales')
+worksheet.write('A1', 'Months')
 worksheet.write('B1', 'Average Sales')
 worksheet.write('C1', 'Minimum Sales')
 worksheet.write('D1', 'Max Sales')
+worksheet.write('E1', 'Total Sales')
+
+row=1
+column = 0
+content = ["Jan", "Feb", "March", "April","May", "June", "July","August","September", "August", "September", "October", "Nov", "Dec"]
+
+for item in content:
+    worksheet.write(row, column, item)
+    row +=2
 #and add the results in other rows
 
 workbook.close()
