@@ -19,9 +19,13 @@ def run():
             sales.append(sale)
 
     total = sum(sales)
+    length = len(sales)
+    average = sum(sales)/len(sales)
+
     print('Monthly Sales: {}'.format(sales))
     print('Total sales: {}'.format(total))
+    print('Length list:{}'.format(length))
+    print('Average Sales:{}'.format(average))
 
 
 run ()
-print("check")
