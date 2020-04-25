@@ -27,6 +27,10 @@ def run():
     print('Length list:{}'.format(length))
     print('Average Sales:{}'.format(average))
 
+    min_sales = min(sales)
+    print('Minimum Sales: {}'.format(min_sales))
+    max_sales = max(sales)
+    print('Maximum sales: {}'.format(max_sales))
 
 run ()
 
