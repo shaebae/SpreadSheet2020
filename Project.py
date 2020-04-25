@@ -22,10 +22,23 @@ def run():
             sale = int(row['sales'])
             sales.append(sale)
 
+    months = []
+    for row in data:
+        month = (row['month'])
+        months.append(month)
+
     total = sum(sales)
     length = len(sales)
     average = sum(sales)/len(sales)
 
+    monthly_changes = []
+    for i in range(11):
+        monthly_change = ((float(sales[i + 1])/float(sales[i])-1)*100)
+        monthly_changes.append(monthly_change)
+
+    print("Monthly percentage changes:")
+    for i in range(11):
+        print(months[i +1], format(monthly_changes[i]/100,".0%"))
 
     print('Monthly Sales: {}'.format(sales))
     print('Total sales: {}'.format(total))
@@ -55,5 +68,6 @@ for item in content:
 #and add the results in other rows
 
 workbook.close()
+
 
 
