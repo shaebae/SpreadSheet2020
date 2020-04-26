@@ -1,6 +1,9 @@
 import csv
 import xlsxwriter
-
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 workbook = xlsxwriter.Workbook('data.xlsx')
 worksheet = workbook.add_worksheet()
@@ -79,10 +82,13 @@ def run():
     for item in monthly_changes:
         worksheet.write(row, 3, format(item/100,".0%"))
         row = row + 1
+
+    df=pd.to_numeric(sales)
+    sns_plot=sns.lineplot(data=df)
+    fig=sns_plot.get_figure()
+    fig.savefig("output.png")
+
 run ()
 
-
-
-#and add the results in other rows
 
 workbook.close()
