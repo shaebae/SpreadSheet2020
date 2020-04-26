@@ -64,7 +64,7 @@ content = ["Jan", "Feb", "March", "April","May", "June", "July","August","Septem
 
 for item in content:
     worksheet.write(row, column, item)
-    row +=2
+    row +=1
 #and add the results in other rows
 
 workbook.close()
