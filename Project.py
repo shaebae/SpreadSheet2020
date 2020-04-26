@@ -70,5 +70,6 @@ for item in content:
 workbook.close()
 
 print('test')
+print('test 2')
 
 
