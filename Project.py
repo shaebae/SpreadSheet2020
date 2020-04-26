@@ -1,5 +1,6 @@
 import csv
 import xlsxwriter
+import seaborn
 
 workbook = xlsxwriter.Workbook('data.xlsx')
 worksheet = workbook.add_worksheet()
@@ -53,14 +54,15 @@ def run():
 run ()
 
 worksheet.write('A1', 'Months')
-worksheet.write('B1', 'Average Sales')
-worksheet.write('C1', 'Minimum Sales')
-worksheet.write('D1', 'Max Sales')
-worksheet.write('E1', 'Total Sales')
+worksheet.write('B1', 'Monthly sales')
+worksheet.write('C1', '% of change sales')
+worksheet.write('D1', 'Minimum Sales')
+worksheet.write('E1', 'Max Sales')
+
 
 row=1
 column = 0
-content = ["Jan", "Feb", "March", "April","May", "June", "July","August","September", "August", "September", "October", "Nov", "Dec"]
+content = ["Jan", "Feb", "March", "April","May", "June", "July","August","September", "August", "September", "October", "Nov", "Dec", "", "Total Sales", "Average Sales"]
 
 for item in content:
     worksheet.write(row, column, item)
@@ -69,5 +71,6 @@ for item in content:
 
 workbook.close()
 
+print("test")
 
 
