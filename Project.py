@@ -1,9 +1,7 @@
 import csv
 import xlsxwriter
-import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 workbook = xlsxwriter.Workbook('data.xlsx')
 worksheet = workbook.add_worksheet()
@@ -45,10 +43,6 @@ def run():
         monthly_change = ((float(sales[i + 1])/float(sales[i])-1)*100)
         monthly_changes.append(monthly_change)
 
-    print("Monthly percentage changes:")
-    for i in range(11):
-        print(months[i +1], format(monthly_changes[i]/100,".0%"))
-
     print('Monthly Sales: {}'.format(sales))
     print('Total sales: {}'.format(total))
     print('Length list:{}'.format(length))
@@ -83,16 +77,15 @@ def run():
         worksheet.write(row, 3, format(item/100,".0%"))
         row = row + 1
 
-    df=pd.to_numeric(sales)
-    sns_plot=sns.lineplot(data=df)
-    fig=sns_plot.get_figure()
-    fig.savefig("output.png")
 
     data = pd.DataFrame({"sales": sales, "months": months})
     plt.plot("months" , "sales" , data=data)
     data2 = pd.DataFrame({"expenditure": expenditure, "months": months})
     plt.plot("months" , "expenditure" , data=data2)
     plt.title("Monthly Sales and Expenditure")
+    plt.ylabel("Dollars")
+    plt.xlabel("2018")
+    plt.legend()
     plt.savefig("SalesAndExpenditure.png")
 
 
