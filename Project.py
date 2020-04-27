@@ -88,6 +88,14 @@ def run():
     fig=sns_plot.get_figure()
     fig.savefig("output.png")
 
+    data = pd.DataFrame({"sales": sales, "months": months})
+    plt.plot("months" , "sales" , data=data)
+    data2 = pd.DataFrame({"expenditure": expenditure, "months": months})
+    plt.plot("months" , "expenditure" , data=data2)
+    plt.title("Monthly Sales and Expenditure")
+    plt.savefig("SalesAndExpenditure.png")
+
+
 run ()
 
 
