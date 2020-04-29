@@ -34,6 +34,7 @@ def run():
         expenditures = int(row['expenditure'])
         expenditure.append(expenditures)
 
+
     total = sum(sales)
     length = len(sales)
     average = sum(sales)/len(sales)
@@ -42,6 +43,7 @@ def run():
     for i in range(11):
         monthly_change = ((float(sales[i + 1])/float(sales[i])-1)*100)
         monthly_changes.append(monthly_change)
+
 
     print('Monthly Sales: {}'.format(sales))
     print('Total sales: {}'.format(total))
@@ -89,7 +91,19 @@ def run():
     plt.savefig("SalesAndExpenditure.png")
 
 
-run ()
+
+    worksheet.write('A15', 'Average Sales')
+    worksheet.write('A16', 'Minimum Sales')
+    worksheet.write('A17', 'Max Sales')
+    worksheet.write('A18', 'Total Sales')
+
+    worksheet.write('B15', average)
+    worksheet.write('B16', min_sales)
+    worksheet.write('B17', max_sales)
+    worksheet.write('B18', total)
+
+
+run()
 
 
 workbook.close()
